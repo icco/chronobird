@@ -12,7 +12,9 @@ email = email.strip();
 pw = pw.strip();
 
 temp = Twitter(email,pw);
+i = 0;
 
-for status in temp.statuses.user_timeline():
-	print status['text'];
+for status in temp.statuses.user_timeline(count=50):
+	i += 1;
+	print str(i) + ": " + status['text'];
 
